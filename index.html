@@ -20,28 +20,17 @@
     }
 
     .bookshelf {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .shelf {
-      width: 100%;
-      overflow-x: auto;
-      white-space: nowrap;
-      padding: 20px 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      padding: 10px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .book {
-      display: inline-block;
-      width: 140px;
-      height: 210px;
-      margin: 0 12px;
+      width: 100%;
+      aspect-ratio: 2 / 3;
       background-color: #fff;
       border: 2px solid #ccc;
       border-radius: 8px;
@@ -49,7 +38,6 @@
       background-size: cover;
       background-position: center;
       cursor: pointer;
-      scroll-snap-align: start;
       transition: transform 0.2s;
     }
 
@@ -58,18 +46,15 @@
     }
 
     @media (max-width: 600px) {
-      .book {
-        width: 120px;
-        height: 180px;
-        margin: 0 8px;
-      }
-
       h2 {
         font-size: 1.4em;
       }
+
+      .bookshelf {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 16px;
+      }
     }
-	
-	
 
     /* Sample book covers */
     .book1 { background-image: url('book1.png'); }
@@ -89,12 +74,10 @@
   <h2>📚 Ally Agoo Bookshelf</h2>
 
   <div class="bookshelf">
-    <div class="shelf">
-      <a target="_blank" href="https://www.flipbookpdf.net/web/site/9d18659485d0fe235abf2070ba07bc11d8981025202510.pdf.html"><div class="book book1"></div></a>
-      <a target="_blank" href="https://www.flipbookpdf.net/web/site/b2415bcbade996fae49a6d6ed773dce4df67e947202510.pdf.html"><div class="book book2"></div></a>
-      <a target="_blank" href="https://www.flipbookpdf.net/web/site/2865f72c30373a9d94ecadd4696de75911c1600a202510.pdf.html"><div class="book book3"></div></a>
-      <a target="_blank" href="https://www.flipbookpdf.net/web/site/c17047f6189b2736f7d937b80c8f73686350edfa202510.pdf.html"><div class="book book4"></div></a>
-    </div>
+    <a target="_blank" href="https://www.flipbookpdf.net/web/site/9d18659485d0fe235abf2070ba07bc11d8981025202510.pdf.html"><div class="book book1"></div></a>
+    <a target="_blank" href="https://www.flipbookpdf.net/web/site/b2415bcbade996fae49a6d6ed773dce4df67e947202510.pdf.html"><div class="book book2"></div></a>
+    <a target="_blank" href="https://www.flipbookpdf.net/web/site/2865f72c30373a9d94ecadd4696de75911c1600a202510.pdf.html"><div class="book book3"></div></a>
+    <a target="_blank" href="https://www.flipbookpdf.net/web/site/c17047f6189b2736f7d937b80c8f73686350edfa202510.pdf.html"><div class="book book4"></div></a>
   </div>
 
 </body>
