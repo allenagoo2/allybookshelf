@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bookshelf</title>
   <style>
     body {
       margin: 0;
       padding: 20px;
-     // background-color: #fdf6e3; /* Light cream background */
       font-family: sans-serif;
+      background-color: #fdf6e3;
     }
 
     h2 {
       text-align: center;
       margin-bottom: 30px;
       color: #5c3a21;
+      font-size: 1.8em;
     }
 
     .bookshelf {
@@ -25,34 +27,49 @@
     }
 
     .shelf {
-     
-      background-size: cover;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
+      width: 100%;
       overflow-x: auto;
       white-space: nowrap;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
 
     .book {
       display: inline-block;
-      width: 100px;
-      height: 150px;
-      margin: 0 10px;
+      width: 140px;
+      height: 210px;
+      margin: 0 12px;
       background-color: #fff;
       border: 2px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
       background-size: cover;
       background-position: center;
       cursor: pointer;
+      scroll-snap-align: start;
+      transition: transform 0.2s;
     }
 
     .book:hover {
       transform: scale(1.05);
-      transition: transform 0.2s;
     }
+
+    @media (max-width: 600px) {
+      .book {
+        width: 120px;
+        height: 180px;
+        margin: 0 8px;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+    }
+	
+	
 
     /* Sample book covers */
     .book1 { background-image: url('book1.png'); }
@@ -73,21 +90,11 @@
 
   <div class="bookshelf">
     <div class="shelf">
-      <a target="_blank" href="https://www.flipbookpdf.net/web/site/9d18659485d0fe235abf2070ba07bc11d8981025202510.pdf.html"><div class="book book1"></div></>
-      <a target="_blank" href="https://www.flipbookpdf.net/web/site/b2415bcbade996fae49a6d6ed773dce4df67e947202510.pdf.html">
-		<div class="book book2"></div>
-	  </a>
-	  <a target="_blank" href="https://www.flipbookpdf.net/web/site/2865f72c30373a9d94ecadd4696de75911c1600a202510.pdf.html">
-      <div class="book book3"></div></a>
-	  <a target="_blank" href="https://www.flipbookpdf.net/web/site/c17047f6189b2736f7d937b80c8f73686350edfa202510.pdf.html">
-      <div class="book book4"></div></a>
-	  <!-- <a target="_blank" href="https://www.flipbookpdf.net/web/site/2865f72c30373a9d94ecadd4696de75911c1600a202510.pdf.html"> -->
-      <!-- <div class="book book5"></div></a> -->
-    <!-- </div> -->
-
-    <!-- <div class="shelf"> -->
-       
-    <!-- </div> -->
+      <a target="_blank" href="https://www.flipbookpdf.net/web/site/9d18659485d0fe235abf2070ba07bc11d8981025202510.pdf.html"><div class="book book1"></div></a>
+      <a target="_blank" href="https://www.flipbookpdf.net/web/site/b2415bcbade996fae49a6d6ed773dce4df67e947202510.pdf.html"><div class="book book2"></div></a>
+      <a target="_blank" href="https://www.flipbookpdf.net/web/site/2865f72c30373a9d94ecadd4696de75911c1600a202510.pdf.html"><div class="book book3"></div></a>
+      <a target="_blank" href="https://www.flipbookpdf.net/web/site/c17047f6189b2736f7d937b80c8f73686350edfa202510.pdf.html"><div class="book book4"></div></a>
+    </div>
   </div>
 
 </body>
